@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+   parameter-store:
+       DOCKER_REGISTERY_URL: /myapp/docker-credentials/docker_url
+       DOCKER_REGISTERY_PASSWORD: /myapp/docker-credentials/password
+       DOCKER_REGISTERY_USERNAME: /myapp/docker-credentials/username 
+
+phases:
+  install:
+    runtime-versions:
+       python: 3.11
+     
+  pre_build:
+    commands:
+       - pip install -r requirements.txt
+      
+  build:
+    commands:
+      # - cd /aws-cicd-project
+       - echo "building docker image"
+       - echo "$DOCKER_REGISTERY_PASSWORD" | docker login -u "$DOCKER_REGISTERY_USERNAME" --password-stdin "$DOCKER_REGISTERY_URL"
+       - docker build -t "$DOCKER_REGISTERY_URL/$DOCKER_REGISTERY_USERNAME/simple-pthon-flask-app:latest" .
+       - docker push "$DOCKER_REGISTERY_URL/$DOCKER_REGISTERY_USERNAME/simple-pthon-flask-app:latest"
+  post_build:
+    commands:
+       - echo "build is suucessfull"
