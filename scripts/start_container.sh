@@ -7,8 +7,9 @@ set -e
 # List running containers
 docker ps
 
-containerid=`docker ps | awk -F " " '{print $1}'`
-docker stop  $containerid
+sudo docker ps
+sudo docker stop paragpatil01/hello-world
+sudo docker rmi paragpatil01/hello-world
 # Pull the latest image from Docker Hub
 docker pull paragpatil01/hello-world
 
