@@ -8,7 +8,7 @@ set -e
 docker ps
 
 containerid=`docker ps | awk -F " " '{print $1}'`
-docker stop -f $containerid
+docker stop  $containerid
 # Pull the latest image from Docker Hub
 docker pull paragpatil01/hello-world
 
