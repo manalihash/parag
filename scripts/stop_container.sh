@@ -9,4 +9,4 @@ sudo docker ps
 sudo docker stop paragpatil01/hello-world
 sudo docker rmi paragpatil01/hello-world
 
-# echo "hello "
+echo "hello "
