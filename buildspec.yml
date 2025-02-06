@@ -6,17 +6,17 @@ phases:
     commands:
       - echo " hello this is build by parag"
       - echo "Logging in to Docker Hub..."
-      - echo "Paragpatil@01" | docker login --username "paragpatil01" --password-stdin
+      - echo "manalishah" | docker login --username "manalishah0000@gmail.com" --password-manalijustin
   build:
     commands:
       - echo "Building the Docker image..."
-      - docker build -t paragpatil01/hello-world:latest .
-      # - docker tag paragpatil01/roammateapp:latest paragpatil01/roammateapp:$(date +%Y%m%d%H%M%S)
+      - docker build -t manalii/hello-world:latest .
+      # - docker tag manalii/roammateapp:latest manalii/roammateapp:$(date +%Y%m%d%H%M%S)
   post_build:
     commands:
       - echo "Pushing the Docker image to Docker Hub..."
-      - docker push paragpatil01/hello-world:latest
-      # - docker push paragpatil01/roammateapp:$(date +%Y%m%d%H%M%S)
+      - docker push manalii/hello-world:latest
+      # - docker push manalii/roammateapp:$(date +%Y%m%d%H%M%S)
 artifacts:
   files:
     - '**/*'
