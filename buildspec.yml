@@ -4,9 +4,9 @@ phases:
 
   pre_build:
     commands:
-      - echo " hello this is build by parag"
+      - echo " hello this is build by manali"
       - echo "Logging in to Docker Hub..."
-      - echo "manalii" | docker login --username "manalishah0000@gmail.com" --password-manalijustin
+      - docker login --username "manalishah0000@gmail.com" --password-manalijustin
   build:
     commands:
       - echo "Building the Docker image..."
