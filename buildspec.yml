@@ -6,7 +6,7 @@ phases:
     commands:
       - echo " hello this is build by parag"
       - echo "Logging in to Docker Hub..."
-      - echo "manalishah" | docker login --username "manalishah0000@gmail.com" --password-manalijustin
+      - echo "manalii" | docker login --username "manalishah0000@gmail.com" --password-manalijustin
   build:
     commands:
       - echo "Building the Docker image..."
